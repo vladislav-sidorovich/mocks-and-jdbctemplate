@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  nosql-database:
+    image: redis
+
+  database-one:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+    ports:
+      - 33060:33060
+
+  database-two:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+    ports:
+      - 33061:33060
