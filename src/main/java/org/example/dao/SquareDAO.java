@@ -23,7 +23,7 @@ public class SquareDAO {
     }
 
     public double getByObjectId(int id) {
-        String sql = "select square from cache_table where id = ?";
+        String sql = "select square from cache_table where id = :id";
 
         Map<String, Integer> params = Map.of("id", id);
         return namedParameterJdbcTemplate.queryForObject(sql,
